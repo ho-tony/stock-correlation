@@ -13,18 +13,17 @@ end = datetime(2022, 12, 31)
 FIRST_TICK = 'QQQ'
 SECOND_TICK = 'ARKK'
 print(FIRST_TICK)
-print("-----------------------------------------------")
 print(json.dumps(si.get_quote_table(FIRST_TICK),indent=4, sort_keys=True))
-print(SECOND_TICK)
 print("-----------------------------------------------")
+print(SECOND_TICK)
 print(json.dumps(si.get_quote_table(SECOND_TICK),indent=4, sort_keys=True))
+print("-----------------------------------------------")
 
 
 
+stockOne = pdr.DataReader(FIRST_TICK, 'yahoo', start)
 
-stockOne = pdr.DataReader(FIRST_TICK, 'yahoo', start, end)
-
-stockTwo = pdr.DataReader(SECOND_TICK, 'yahoo', start, end)
+stockTwo = pdr.DataReader(SECOND_TICK, 'yahoo', start)
 
 # plots out close price of a stock
 
